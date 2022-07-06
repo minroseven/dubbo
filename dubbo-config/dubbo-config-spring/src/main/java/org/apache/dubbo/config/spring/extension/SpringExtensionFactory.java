@@ -64,6 +64,7 @@ public class SpringExtensionFactory implements ExtensionFactory {
     public <T> T getExtension(Class<T> type, String name) {
 
         //SPI should be get from SpiExtensionFactory
+        // 检查:type必须为接口且必须包含@SPI注解(略)
         if (type.isInterface() && type.isAnnotationPresent(SPI.class)) {
             return null;
         }

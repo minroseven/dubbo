@@ -556,6 +556,11 @@ public class HashedWheelTimer implements Timer {
 
         private final HashedWheelTimer timer;
         private final TimerTask task;
+        /**
+         *  定时任务执行的时间
+         *  currentTime +delay -startTime ns
+         */
+
         private final long deadline;
 
         @SuppressWarnings({"unused", "FieldMayBeFinal", "RedundantFieldInitialization"})
