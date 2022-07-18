@@ -154,6 +154,7 @@ public class FailbackClusterInvoker<T> extends AbstractClusterInvoker<T> {
             try {
                 logger.info("Attempt to retry to invoke method " + invocation.getMethodName() +
                         ". The total will retry " + retries + " times, the current is the " + retriedTimes + " retry");
+                //
                 Invoker<T> retryInvoker = select(loadbalance, invocation, invokers, Collections.singletonList(lastInvoker));
                 lastInvoker = retryInvoker;
                 retryInvoker.invoke(invocation);
